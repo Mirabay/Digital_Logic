@@ -1,0 +1,7 @@
+SUBDESIGN MyAND{
+	A,B:INPUT;
+	C:OUTPUT;
+}
+BEGIN
+	C=A and B;
+END;
