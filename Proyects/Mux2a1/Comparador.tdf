@@ -1,0 +1,14 @@
+SUBDESIGN Comparador(
+	A[3..0],B[3..0]			:INPUT;
+	AmayorB,AigualB,AmenorB	:OUTPUT;
+)
+BEGIN 
+	
+	AmayorB = A[] > B[];
+	AigualB = A[] == B[];
+	AmenorB = A[] < B[];
+	
+END;
+ 
+ 
+% SHITTTTT %

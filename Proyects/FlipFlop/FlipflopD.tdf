@@ -1,0 +1,12 @@
+SUBDESIGN FlipFlopD(
+	Dato, Reloj	:INPUT;
+	Salida		:oUTPUT;
+)
+VARIABLE 
+%DEFINCION DE FLIP FLOP EN AHDL%
+	F	:DFF;
+BEGIN
+	F.d	=	Dato;
+	F.clk	=	Reloj;
+	Salida=	F.q;
+END;

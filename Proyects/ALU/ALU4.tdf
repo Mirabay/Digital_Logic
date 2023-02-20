@@ -1,0 +1,5 @@
+SUBDESIGN Alu4
+(
+	A[3..0],B[3..0],Sel[2..0] : INPUT;
+	R[]
+)

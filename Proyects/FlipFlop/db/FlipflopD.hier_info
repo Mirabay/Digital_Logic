@@ -1,0 +1,6 @@
+|FlipflopD
+Dato => F.DATAIN
+Reloj => F.CLK
+Salida <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+

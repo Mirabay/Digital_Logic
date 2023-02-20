@@ -1,0 +1,17 @@
+SUBDESIGN MyPrimos(
+	A,B,C,D:INPUT;
+	P:OUTPUT;
+)
+BEGIN
+	TABLE
+	A,B,C => P;
+	0,0,0 => 0;
+	0,0,1 => 0;
+	0,1,0 => 0;
+	0,1,1 => 1;
+	1,0,0 => 0;
+	1,0,1 => 1;
+	1,1,0 => 1;
+	1,1,1 => 1;	
+	END TABLE;
+END;

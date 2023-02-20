@@ -1,0 +1,11 @@
+|Secuencia
+Reset => M.IN1
+Reloj => M.IN1
+d => _.IN1
+d => _.IN0
+d => _.IN0
+d => _.IN1
+d => _.IN0
+Sec <= Sec.DB_MAX_OUTPUT_PORT_TYPE
+
+

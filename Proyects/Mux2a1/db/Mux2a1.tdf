@@ -1,0 +1,11 @@
+SUBDESIGN Mux2a1(
+	A[7..0],B[7..0], Sel	:INPUT;
+	F[7..0]					:oUTPUT;
+)
+BEGIN
+	IF(Sel==GND)THEN
+		F[]=A[];
+	ELSE
+		F[]=B[];
+	END;
+END;

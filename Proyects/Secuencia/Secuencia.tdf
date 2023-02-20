@@ -1,0 +1,42 @@
+SUBDESIGN Secuencia(
+	Reset,Reloj,d	: INPUT;
+	Sec				: OUTPUT;
+)
+VARIABLE M : machine with states (S0,S1,S2,S3);
+%maquina de estados en potencia de 2%
+
+BEGIN
+M.(clk,reset)=(Reloj,Reset);
+CASE M is
+	WHEN S0 =>
+	Sec = gnd;
+		IF d == vcc THEN 
+			M=S1;
+		ELSE
+			M=S0;
+		END IF;
+		
+	WHEN S1 =>
+	Sec = gnd;
+		IF d == gnd THEN 
+			M=S2;
+		ELSE
+			M=S1;
+		END IF;
+		
+	WHEN S2 =>
+	Sec = gnd;
+		IF d == vcc THEN 
+			M=S3;
+		ELSE
+			M=S0;
+		END IF;
+		
+	WHEN S3 =>
+	Sec = vcc;
+	M=S3;
+		
+END CASE;
+	
+
+END;

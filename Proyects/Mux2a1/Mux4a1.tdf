@@ -1,0 +1,16 @@
+SUBDESIGN MUX4a1(
+	E0,E1,E2,E3,Sel[1..0]	:INPUT;
+	F								:OUTPUT;
+)
+BEGIN
+	CASE Sel[] IS
+		WHEN 0 =>
+			F=E0;
+		WHEN 1 =>
+			F=E1;
+		WHEN 2 =>
+			F=E2;
+		WHEN 3 =>
+			F=E3;
+	END CASE;
+			

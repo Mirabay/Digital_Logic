@@ -1,0 +1,19 @@
+SUBDESIGN SECUENCIA
+(
+	Reset, Reloj, d	:INPUT;
+	Sec					:OUTPUT;
+)
+VARIABLE
+A,B:DFF;
+
+BEGIN
+%Estatudo de asignación multiple%
+A.(clk,clrn)=(Reloj,!Reset);
+B.(clk,clrn)=(Reloj,!Reset);
+
+%El dato de A es igual a B!q+AB%
+A.d	= (B.q & !d) # (A.q & B.q);
+B.d	=  d # (A.q & B.q);
+
+Sec 	= B.q & A.q; 
+END;

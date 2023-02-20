@@ -1,0 +1,21 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Salida",
+					"strict" : false
+				},
+				{
+					"name" : "Dato",
+					"strict" : false
+				},
+				{
+					"name" : "Reloj",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
