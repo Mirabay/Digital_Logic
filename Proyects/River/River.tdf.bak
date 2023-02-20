@@ -1,0 +1,14 @@
+SUBDESIGN River(
+	Enter,Man,Straw,Wolf,Sheep,RESET	:INPUT;
+	Win,Fail, Crash				: OUTPUT;
+)
+VARIABLE M: MACHINE WITH STATES (S0,S1,S2,S3,S4,S5,S6,S7,V0,V2,V3,V4,V5,V6,V7)
+%Para nuestra suerte, 16 es potencia de dos.%
+
+BEGIN
+	D[]=[Man,Straw,Wolf,Sheep];
+	M.(CLK,RESET)=(ENTER,RESET);
+	CASE M IS
+		WHEN S0 =>
+			IF D==9;
+		
