@@ -1,5 +1,5 @@
 Flow report for River
-Mon Feb 20 14:50:53 2023
+Tue Feb 21 09:49:29 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,28 +37,28 @@ refer to the applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Feb 20 14:50:53 2023       ;
-; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                      ; River                                       ;
-; Top-level Entity Name              ; River                                       ;
-; Family                             ; MAX 10                                      ;
-; Device                             ; 10M08DAF484C8G                              ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 25 / 8,064 ( < 1 % )                        ;
-;     Total combinational functions  ; 25 / 8,064 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 16 / 8,064 ( < 1 % )                        ;
-; Total registers                    ; 16                                          ;
-; Total pins                         ; 9 / 250 ( 4 % )                             ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 387,072 ( 0 % )                         ;
-; Embedded Multiplier 9-bit elements ; 0 / 48 ( 0 % )                              ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
-; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
-; ADC blocks                         ; 0 / 1 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Flow Summary                                                                              ;
++------------------------------------+------------------------------------------------------+
+; Flow Status                        ; EDA Netlist Writer Failed - Tue Feb 21 09:49:29 2023 ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition          ;
+; Revision Name                      ; River                                                ;
+; Top-level Entity Name              ; River                                                ;
+; Family                             ; MAX 10                                               ;
+; Device                             ; 10M08DAF484C8G                                       ;
+; Timing Models                      ; Final                                                ;
+; Total logic elements               ; 25 / 8,064 ( < 1 % )                                 ;
+;     Total combinational functions  ; 25 / 8,064 ( < 1 % )                                 ;
+;     Dedicated logic registers      ; 16 / 8,064 ( < 1 % )                                 ;
+; Total registers                    ; 16                                                   ;
+; Total pins                         ; 9 / 250 ( 4 % )                                      ;
+; Total virtual pins                 ; 0                                                    ;
+; Total memory bits                  ; 0 / 387,072 ( 0 % )                                  ;
+; Embedded Multiplier 9-bit elements ; 0 / 48 ( 0 % )                                       ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                        ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                        ;
+; ADC blocks                         ; 0 / 1 ( 0 % )                                        ;
++------------------------------------+------------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -108,7 +108,9 @@ refer to the applicable agreement for further details.
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4635 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4626 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4634 MB             ; 00:00:00                           ;
-; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4624 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4624 MB             ; 00:00:01                           ;
+; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -130,6 +132,8 @@ refer to the applicable agreement for further details.
 ; EDA Netlist Writer   ; EvangelionPC     ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; EvangelionPC     ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; EvangelionPC     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; TonysLap         ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; TonysLap         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -149,6 +153,8 @@ quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_f
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=D:/DigitalLogic/Proyects/River/simulation/qsim/ River -c River
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off River -c River --vector_source=D:/DigitalLogic/Proyects/River/Waveform.vwf --testbench_file=D:/DigitalLogic/Proyects/River/simulation/qsim/Waveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=D:/DigitalLogic/Proyects/River/simulation/qsim/ River -c River
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off River -c River --vector_source=D:/DigitalLogic/Proyects/River/Waveform.vwf --testbench_file=D:/DigitalLogic/Proyects/River/simulation/qsim/Waveform.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off River -c River --vector_source=D:/DigitalLogic/Proyects/River/Waveform.vwf --testbench_file=D:/DigitalLogic/Proyects/River/simulation/qsim/Waveform.vwf.vht
 
 
 
