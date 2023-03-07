@@ -1,7 +1,14 @@
-SUBDESIGN MyAND{
+
+-- Declaramos el SUBDESING con el nombre
+-- MyAND
+SUBDESIGN MyAND(
+	-- Le damos dos entradas y una salida.
 	A,B:INPUT;
 	C:OUTPUT;
-}
+)
+-- Declaramos la logica de nuestro and;
 BEGIN
 	C=A and B;
 END;
+
+
