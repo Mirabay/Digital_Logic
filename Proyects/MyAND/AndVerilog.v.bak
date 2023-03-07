@@ -1,0 +1,6 @@
+module AndVerilog(a1,b1,y);
+	input a1,b1;
+	output y;
+
+assign y = a1 and b;
+endmodule;
