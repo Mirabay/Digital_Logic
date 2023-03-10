@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Feb 20 14:40:36 2023
+Analysis & Synthesis Status : Successful - Thu Mar 09 16:57:33 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : River
 Top-level Entity Name : River
 Family : MAX 10
-Total logic elements : 24
-    Total combinational functions : 23
-    Dedicated logic registers : 16
-Total registers : 16
+Total logic elements : 28
+    Total combinational functions : 27
+    Dedicated logic registers : 18
+Total registers : 18
 Total pins : 9
 Total virtual pins : 0
 Total memory bits : 0

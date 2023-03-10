@@ -1,5 +1,5 @@
 Analysis & Synthesis report for River
-Mon Feb 20 14:40:36 2023
+Thu Mar 09 16:57:33 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -43,15 +43,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 20 14:40:36 2023       ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 09 16:57:33 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; River                                       ;
 ; Top-level Entity Name              ; River                                       ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 24                                          ;
-;     Total combinational functions  ; 23                                          ;
-;     Dedicated logic registers      ; 16                                          ;
-; Total registers                    ; 16                                          ;
+; Total logic elements               ; 28                                          ;
+;     Total combinational functions  ; 27                                          ;
+;     Dedicated logic registers      ; 18                                          ;
+; Total registers                    ; 18                                          ;
 ; Total pins                         ; 9                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -179,20 +179,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 24          ;
+; Estimated Total logic elements              ; 28          ;
 ;                                             ;             ;
-; Total combinational functions               ; 23          ;
+; Total combinational functions               ; 27          ;
 ; Logic element usage by number of LUT inputs ;             ;
 ;     -- 4 input functions                    ; 9           ;
-;     -- 3 input functions                    ; 7           ;
-;     -- <=2 input functions                  ; 7           ;
+;     -- 3 input functions                    ; 12          ;
+;     -- <=2 input functions                  ; 6           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 23          ;
+;     -- normal mode                          ; 27          ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
-; Total registers                             ; 16          ;
-;     -- Dedicated logic registers            ; 16          ;
+; Total registers                             ; 18          ;
+;     -- Dedicated logic registers            ; 18          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 9           ;
@@ -200,9 +200,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; Enter~input ;
-; Maximum fan-out                             ; 16          ;
-; Total fan-out                               ; 130         ;
-; Average fan-out                             ; 2.28        ;
+; Maximum fan-out                             ; 18          ;
+; Total fan-out                               ; 149         ;
+; Average fan-out                             ; 2.37        ;
 +---------------------------------------------+-------------+
 
 
@@ -211,34 +211,36 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |River                     ; 23 (23)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 9    ; 0            ; 0          ; |River              ; River       ; work         ;
+; |River                     ; 27 (27)             ; 18 (18)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 9    ; 0            ; 0          ; |River              ; River       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------+
-; State Machine - |River|M                                                             ;
-+------+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
-; Name ; V7 ; V6 ; V5 ; V4 ; V3 ; V2 ; V1 ; V0 ; S7 ; S6 ; S5 ; S4 ; S3 ; S2 ; S1 ; S0 ;
-+------+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
-; S0   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ;
-; S1   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 1  ;
-; S2   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 1  ;
-; S3   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 1  ;
-; S4   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 1  ;
-; S5   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; S6   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; S7   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V0   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V1   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V2   ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V3   ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V4   ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V5   ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V6   ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-; V7   ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
-+------+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
++------------------------------------------------------------------------------------------------+
+; State Machine - |River|M                                                                       ;
++------+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+; Name ; V7 ; V5 ; V4 ; V3 ; V2 ; V1 ; V0 ; C6 ; C5 ; C3 ; C2 ; S7 ; S5 ; S4 ; S3 ; S2 ; S1 ; S0 ;
++------+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+; S0   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ;
+; S1   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 1  ;
+; S2   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 1  ;
+; S3   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 1  ;
+; S4   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 1  ;
+; S5   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; S7   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; C2   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; C3   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; C5   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; C6   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; V0   ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; V1   ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; V2   ; 0  ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; V3   ; 0  ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; V4   ; 0  ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; V5   ; 0  ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
+; V7   ; 1  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 0  ; 1  ;
++------+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 
 
 +------------------------------------------------------+
@@ -246,10 +248,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 16    ;
+; Total registers                              ; 18    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Clear ; 18    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -262,16 +264,16 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 9                           ;
-; cycloneiii_ff         ; 16                          ;
-;     CLR               ; 16                          ;
-; cycloneiii_lcell_comb ; 23                          ;
-;     normal            ; 23                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 7                           ;
+; cycloneiii_ff         ; 18                          ;
+;     CLR               ; 18                          ;
+; cycloneiii_lcell_comb ; 27                          ;
+;     normal            ; 27                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 12                          ;
 ;         4 data inputs ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.07                        ;
+; Average LUT depth     ; 2.08                        ;
 +-----------------------+-----------------------------+
 
 
@@ -290,38 +292,41 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Feb 20 14:40:31 2023
+    Info: Processing started: Thu Mar 09 16:57:28 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off River -c River
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 14
 Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 20
-Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 26
-Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 32
-Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 38
-Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 44
-Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 50
-Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 63
-Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 70
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 22
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 29
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 35
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 41
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 47
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 53
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 59
 Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 77
 Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 84
 Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 91
 Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 98
 Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 105
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 112
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 119
+Warning (287004): Group name "D" is missing brackets ([ ]) File: D:/DigitalLogic/Proyects/River/River.tdf Line: 126
 Info (12021): Found 1 design units, including 1 entities, in source file river.tdf
     Info (12023): Found entity 1: River File: D:/DigitalLogic/Proyects/River/River.tdf Line: 1
 Info (12127): Elaborating entity "River" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 33 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 24 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Mon Feb 20 14:40:36 2023
+    Info (21061): Implemented 28 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Thu Mar 09 16:57:33 2023
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

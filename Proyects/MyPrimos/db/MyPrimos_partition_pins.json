@@ -8,11 +8,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "B",
+					"name" : "D",
 					"strict" : false
 				},
 				{
 					"name" : "C",
+					"strict" : false
+				},
+				{
+					"name" : "B",
 					"strict" : false
 				},
 				{

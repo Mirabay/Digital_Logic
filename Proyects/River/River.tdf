@@ -2,7 +2,7 @@ SUBDESIGN River(
 	Enter,RESET,D[3..0]			:INPUT;
 	Win,Fail,Crash					: OUTPUT;
 )
-VARIABLE M: MACHINE WITH STATES (S0,S1,S2,S3,S4,S5,S6,S7,V0,V1,V2,V3,V4,V5,V6,V7);
+VARIABLE M: MACHINE WITH STATES (S0,S1,S2,S3,S4,S5,S7,C2,C3,C5,C6,V0,V1,V2,V3,V4,V5,V7);
 %Para nuestra suerte, 16 es potencia de dos.%
 
 BEGIN
@@ -19,8 +19,17 @@ BEGIN
 		WHEN S1 =>
 			IF D==10 THEN
 				M=S2;
+			Else IF D==12 THEN
+				M=C2;
 			ELSE
 				M=V1;
+			END IF;
+			END IF;
+		WHEN C2 =>
+			IF D== 9 THEN
+				M=C3;
+			ELSE 
+				M=C5;
 			END IF;
 		WHEN S2 =>
 			IF D==9 THEN
@@ -28,36 +37,55 @@ BEGIN
 			ELSE
 				M=V2;
 			END IF;
+		WHEN C3 =>
+			IF D== 10 THEN
+				M=S4;
+			ELSE 
+				M=C6;
+			END IF;
 		WHEN S3 =>
-			IF D==12 THEN
+			IF D==12  THEN
 				M=S4;
 			ELSE
 				M=V3;
 			END IF;
 		WHEN S4 =>
-			IF D==9 THEN
+			IF D==8 THEN
 				M=S5;
 			ELSE
 				M=V4;
 			END IF;
 		WHEN S5 =>
-			IF D==8 THEN
-				M=S6;
+			IF D==9 THEN
+				M=S7;
 			ELSE
 				M=V5;
 			END IF;
-		WHEN S6 =>
+		%WHEN S6 =>
 			IF D==9 THEN
 				M=S7;
 			ELSE
 				M=V6;
-			END IF;
+			END IF;%
 		WHEN S7 =>
 			Win = vcc;
 			Crash = gnd;
-			Fail = gnd;
+			Fail = gnd;			
 		%Parte 2%
-			
+		WHEN C5 =>
+		Crash = vcc;
+			IF D== 9 THEN
+				M=C3;
+			ELSE 
+				M=V7;
+			END IF;
+		WHEN C6 =>
+		Crash = vcc;
+			IF D== 10 THEN
+				M=S4;
+			ELSE 
+				M=V7;
+			END IF;
 		WHEN V0 =>
 		Crash = vcc;
 			IF D==9 THEN
@@ -95,13 +123,6 @@ BEGIN
 			END IF;
 		WHEN V5 =>
 		Crash = vcc;
-			IF D==8 THEN
-				M=S6;
-			ELSE
-				M=V7;
-			END IF;
-		WHEN V6 =>
-		Crash = vcc;
 			IF D==9 THEN
 				M=S7;
 			ELSE
@@ -111,6 +132,11 @@ BEGIN
 			Win = gnd;
 			Crash = gnd;
 			Fail = VCC;
+		WHEN OTHERS =>
+			Win = gnd;
+			Crash = gnd;
+			Fail = VCC;
+			
 	END CASE;
 		
 END;
